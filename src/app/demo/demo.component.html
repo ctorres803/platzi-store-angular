@@ -1,0 +1,25 @@
+<p>demo works!</p>
+<input type="text" [(ngModel)]='title'>
+{{ title }}
+
+
+
+<div [ngSwitch]="title">
+  <p *ngSwitchCase="'nicolas'">este es nicolas</p>
+  <p *ngSwitchCase="'julian'">este es julian</p>
+  <p *ngSwitchCase="'camilo'">este es camilo</p>
+  <p *ngSwitchDefault>no hay macth</p>
+
+</div>
+
+
+<button (click)="addItem()">Add item</button>
+
+
+<ul>
+  <li *ngIf="items.length ===0">Lista esta vacia</li>
+  <li *ngFor="let cas of items; index as i">
+    {{cas}} : {{i}}
+    <button (click)="deleteItem(i)">delete</button>
+  </li>
+</ul>
